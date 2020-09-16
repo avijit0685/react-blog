@@ -8,6 +8,10 @@ const { auth } = require("../middleware/auth");
 //             User
 //=================================
 
+router.get("/", (req, res) => {
+  res.send("Welcome to Heroku Deployment");
+});
+
 router.get("/auth", auth, (req, res) => {
   res.status(200).json({
     _id: req.user._id,
