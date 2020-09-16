@@ -23,6 +23,10 @@ app.use(cookieParser());
 
 app.use("/api/users", require("./routes/users"));
 
+app.get("/", (req, res) => {
+  res.json({ msg: "Welcome to Heroku Deployment" });
+});
+
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
